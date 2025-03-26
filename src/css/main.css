@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #4285F4;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar {
+    width: 100%;
+    border: 1px solid #dfe1e5;
+    padding: 14px;
+    border-radius: 24px;
+    background: white;
+    box-shadow: none;
+    transition: box-shadow 0.2s;
+}
+
+.search-bar:hover {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    color: #202124;
+}
+
+.shortcuts {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.shortcut {
+    text-decoration: none;
+    color: #202124;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s;
+}
+
+.shortcut:hover {
+    background-color: #e8e8e8;
+}
+
+.profile-icon {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #346c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+}

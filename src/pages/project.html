@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="../css/projects.css" rel="stylesheet">
+</head>
+<body class="bg-[#f9f9f9]">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-6 py-3 bg-white border-b mb-2">
+        <h1 class="text-2xl font-medium">Projects</h1>
+        <div class="flex items-center gap-4">
+            <button class="p-2 hover:bg-gray-100 rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                </svg>
+            </button>
+            <button id="profileBtn" class="w-8 h-8 rounded-full bg-[#346c1c] text-white flex items-center justify-center">
+                S
+            </button>
+        </div>
+    </header>
+
+    <!-- Header with filters -->
+    <div class="sticky top-0 bg-white z-50 border-b">
+        <div class="flex items-center justify-start px-6 py-3 gap-3 overflow-x-auto">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="html">HTML/CSS/JS</button>
+            <button class="filter-btn" data-filter="react">React</button>
+            <button class="filter-btn" data-filter="ml">Machine Learning</button>
+            <button class="filter-btn" data-filter="firebase">Firebase</button>
+            <button class="filter-btn" data-filter="mit">MIT App Inventor</button>
+            <button class="filter-btn" data-filter="devops">DevOps</button>
+        </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-6" id="projects-grid">
+        <!-- Project Cards will be inserted here by JavaScript -->
+    </div>
+    <script src="../assets/js/projects.js"></script>
+</body>
+</html>

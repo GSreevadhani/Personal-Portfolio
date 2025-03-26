@@ -1,0 +1,33 @@
+.filter-btn {
+    padding: 8px 12px;
+    border-radius: 32px;
+    font-size: 14px;
+    color: #030303;
+    background: #f2f2f2;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.filter-btn:hover {
+    background: #e5e5e5;
+}
+
+.filter-btn.active {
+    background: #030303;
+    color: white;
+}
+
+.project-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-thumbnail {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 12px;
+}
