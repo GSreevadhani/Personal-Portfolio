@@ -1,22 +1,23 @@
-pipeline { 
-    agent any  
-    
+pipeline {
+    agent any
     environment {
-        DOCKER_USERNAME = credentials('docker-hub-username')
-        DOCKER_PASSWORD = credentials('docker-hub-password')
+        GIT_CREDENTIALS = credentials('github-token')
     }
-
-    stages { 
-        stage('Build and Push Docker Image') { 
-            steps { 
+    stages {
+        stage('Checkout') {
+            steps {
                 script {
-                    // Grant execute permissions to deploy.sh
-                    sh 'chmod +x deploy.sh'  
-
-                    // Run deployment script
-                    sh './deploy.sh'  
+                    git credentialsId: 'github-token', url: 'https://github.com/GSreevadhani/Personal-Portfolio.git', branch: 'main'
                 }
-            } 
-        } 
-    } 
+            }
+        }
+        stage('Build and Push Docker Image') {
+            steps {
+                script {
+                    sh 'chmod +x deploy.sh'
+                    sh './deploy.sh'
+                }
+            }
+        }
+    }
 }
