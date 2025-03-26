@@ -2,7 +2,7 @@
 set -e  # Stop script if any command fails
 
 # Define variables
-IMAGE_NAME="sreevadhani/personal-portfolio"
+IMAGE_NAME="subiksha17/personal-portfolio"
 TAG="latest"
 
 echo "Running build script..."
@@ -10,7 +10,7 @@ chmod +x build.sh
 ./build.sh
 
 # Docker Hub Login
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+echo "s1705sha17" | docker login -u "subiksha17" --password-stdin
 
 # Push image to Docker Hub
 echo "Pushing Docker image to Docker Hub..."
