@@ -2,7 +2,7 @@
 set -e  # Stop script if any command fails
 
 # Define variables
-IMAGE_NAME="sreevadhani/personal-portfolio"
+IMAGE_NAME="subiksha17/personal-portfolio"
 TAG="latest"
 
 echo "Building Docker image..."
