@@ -1,13 +1,30 @@
 #!/bin/bash
-set -e  # Exit on error
+set -e  # Stop script if any command fails
 
-SERVER_USER="your-username"
-SERVER_IP="your-server-ip"
-DEPLOY_DIR="/var/www/html/portfolio"
+# Define variables
+IMAGE_NAME="sreevadhani/personal-portfolio"
+TAG="latest"
 
-echo "Deploying project to server..."
+echo "Running build script..."
+chmod +x build.sh
+./build.sh
 
-# Transfer files via SCP
-scp -r build/* $SERVER_USER@$SERVER_IP:$DEPLOY_DIR
+# Docker Hub Login
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
-echo "Deployment completed."
+# Push image to Docker Hub
+echo "Pushing Docker image to Docker Hub..."
+docker push $IMAGE_NAME:$TAG
+echo "Image pushed successfully!"
+
+# Deploy: Stop and remove existing container if running
+docker stop personal-portfolio || true
+docker rm personal-portfolio || true
+
+# Pull latest image
+docker pull $IMAGE_NAME:$TAG
+
+# Run new container
+docker run -d -p 8000:80 --name=personal-portfolio $IMAGE_NAME:$TAG
+
+echo "Deployment completed! Access your portfolio at http://localhost:8000"
